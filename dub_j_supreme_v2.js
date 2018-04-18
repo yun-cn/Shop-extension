@@ -29,10 +29,11 @@ automatically choose correct size, if applicable
     }
     console.log("done choosing size.")
     addToCart()
-  } else 
+    setTimeout(function() { checkoutList(); }, 3000)
+  } else
     setTimeout(function(){ waitTillArticlePageIsOpen(); }, 10);
     console.log("waiting to load...");
-  
+
   return;
 })();
 
@@ -56,4 +57,14 @@ function addToCart() {
       return;
     }
   })();
+}
+
+function checkoutList() {
+  /*
+    Set Form
+  */
+  document.getElementById('credit_card_last_name').value = "ZHANG"
+  document.getElementById('credit_card_first_name').value = "YUNLING"
+  document.getElementById('order_email').value = "yun313350095@gmail.com"
+  // document.getElementById().value =
 }
